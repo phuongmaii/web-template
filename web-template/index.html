@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Development Template</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            color: #222;
+        }
+
+        /* Thanh điều hướng */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #111;
+            padding: 10px 5%;
+            gap: 20px;
+        }
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .nav-list li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-list li a:hover {
+            color: #79e6a3;
+        }
+
+        .rightNav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #search {
+            width: 150px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border: 1px solid white;
+            border-radius: 6px;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #111;
+        }
+
+        /* Các phần giới thiệu */
+        .firstsection,
+        .secondsection {
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            padding: 50px 8%;
+        }
+
+        .firstsection {
+            background: #d9f7e5;
+        }
+
+        .secondsection {
+            background: #dce9ff;
+        }
+
+        .box-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .firstHalf {
+            width: 100%;
+        }
+
+        .text-big {
+            margin-bottom: 16px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .text-small {
+            font-size: 17px;
+        }
+
+        /* Phần Java và hình minh họa */
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1100px;
+            min-height: 350px;
+            margin: auto;
+            padding: 50px 30px;
+        }
+
+        .section-Left {
+            flex-direction: row-reverse;
+        }
+
+        .paras {
+            flex: 1;
+        }
+
+        .thumbnail {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            max-width: 280px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px #0002;
+        }
+
+        /* Footer */
+        .background {
+            background: #111;
+        }
+
+        .text-footer {
+            padding: 25px 10px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Responsive cho điện thoại */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px 20px;
+            }
+
+            .rightNav {
+                width: 100%;
+                justify-content: center;
+            }
+
+            #search {
+                width: 60%;
+            }
+
+            .firstsection,
+            .secondsection {
+                padding: 35px 7%;
+            }
+
+            .text-big {
+                font-size: 29px;
+            }
+
+            .section,
+            .section-Left {
+                flex-direction: column;
+                padding: 35px 7%;
+                gap: 20px;
+            }
+
+            .thumbnail {
+                flex: auto;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Thanh menu -->
+    <nav class="navbar background">
+        <div class="logo">WebLearn</div>
+
+        <ul class="nav-list">
+            <li><a href="#web">Web Technology</a></li>
+            <li><a href="#program">C Programming</a></li>
+            <li><a href="#course">Courses</a></li>
+        </ul>
+
+        <form class="rightNav" id="searchForm">
+            <input type="search" name="search" id="search"
+                   placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+            <button type="submit" class="btn btn-sm">Search</button>
+        </form>
+    </nav>
+
+    <!-- Phần 1: Web Technology -->
+    <section class="firstsection" id="web">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big">Web Technology</h1>
+                <p class="text-small">
+                    HTML là viết tắt của HyperText Markup Language,
+                    được sử dụng để xây dựng cấu trúc trang web.
+                    HTML giúp trình duyệt hiển thị văn bản, hình ảnh,
+                    liên kết và nhiều nội dung khác. Khi kết hợp HTML
+                    với CSS và JavaScript, chúng ta có thể tạo nên
+                    những trang web đẹp mắt và có tính tương tác.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần 2: C Programming -->
+    <section class="secondsection" id="program">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big">C Programming</h1>
+                <p class="text-small">
+                    C là ngôn ngữ lập trình thủ tục được phát triển
+                    bởi Dennis Ritchie. Ngôn ngữ C có tốc độ xử lý tốt,
+                    cú pháp tương đối gọn và cho phép làm việc ở mức
+                    bộ nhớ thấp. C thường được sử dụng trong phát triển
+                    hệ điều hành, trình biên dịch và các phần mềm hệ thống.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần 3: Java -->
+    <section class="section section-Left" id="course">
+        <div class="paras">
+            <h1 class="text-big">Java Programming</h1>
+            <p class="text-small">
+                Java là ngôn ngữ lập trình hướng đối tượng phổ biến.
+                Mã Java thường được biên dịch thành bytecode và chạy
+                trên Java Virtual Machine (JVM), giúp chương trình
+                hoạt động trên nhiều nền tảng khác nhau. Java được
+                sử dụng để xây dựng ứng dụng web, phần mềm doanh nghiệp
+                và nhiều loại ứng dụng khác.
+            </p>
+        </div>
+
+        <div class="thumbnail">
+            <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80"
+                alt="Laptop dùng để lập trình">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="background">
+        <p class="text-footer">
+            Copyright © 2026 WebLearn - All rights reserved
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const keyword = document.getElementById("search").value.trim();
+
+            if (keyword === "") {
+                alert("Vui lòng nhập nội dung cần tìm!");
+                return;
+            }
+
+            const sections = document.querySelectorAll("section");
+            let found = false;
+
+            sections.forEach(function(section) {
+                if (section.textContent.toLowerCase().includes(keyword.toLowerCase())) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                alert("Không tìm thấy nội dung phù hợp.");
+            }
+        });
+    </script>
+
+</body>
+</html>
